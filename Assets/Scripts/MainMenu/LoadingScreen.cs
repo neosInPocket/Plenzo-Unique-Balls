@@ -23,6 +23,7 @@ public class LoadingScreen : MonoBehaviour
 	public void LoadScreen(Transform screen)
 	{
 		if (currentScreen == screen) return;
+		SavingCore.SaveData();
 		canvasGroup.blocksRaycasts = true;
 		StartCoroutine(Fade(screen, 1f));
 	}
