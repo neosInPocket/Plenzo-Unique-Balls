@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de67795fbad719140850115278280094
+guid: bb059c2126ac764409dd97e3fed41c5f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Soldier 3D Expanded
+  - Soldier Academy Expanded
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
