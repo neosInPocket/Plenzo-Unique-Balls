@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class SettingsScreen : MonoBehaviour
 
 	private void Start()
 	{
+		Controller = FindObjectsOfType<BackgroundMusicController>().FirstOrDefault();
 		RefershSliders();
 	}
 

@@ -6,7 +6,7 @@ public class ShopRefresher : MonoBehaviour
 {
 	[SerializeField] private UpgradeCardViewer card;
 	[SerializeField] private GoodsRefreshController goodsRefreshController;
-	[SerializeField] private Button healthViewButton;
+	[SerializeField] private Button coinChanceViewButton;
 	[SerializeField] private Button speedViewButton;
 	[SerializeField] private Image goodImage;
 	[SerializeField] private TMP_Text costAmount;
@@ -14,26 +14,14 @@ public class ShopRefresher : MonoBehaviour
 	[SerializeField] private Sprite gemIcon;
 	private bool isHealthShowing;
 
-	private void Start()
-	{
-		Refresh();
-	}
-
-	public void Refresh()
-	{
-		goodsRefreshController.RefreshInfo();
-		RefreshSpeed();
-		RefreshHealth();
-	}
-
-	public void ViewHealth()
+	public void ViewCoinChance()
 	{
 		isHealthShowing = true;
 		goodImage.sprite = gemIcon;
 		costAmount.text = 1.ToString();
 
 		card.gameObject.SetActive(true);
-		RefreshHealth();
+		RefreshCoinChance();
 	}
 
 	public void ViewSpeed()
@@ -46,19 +34,19 @@ public class ShopRefresher : MonoBehaviour
 		RefreshSpeed();
 	}
 
-	public void RefreshHealth()
+	public void RefreshCoinChance()
 	{
-		card.ShowProgress(SavingCore.Data.healthUpgrades);
+		card.ShowProgress(SavingCore.Data.coinSpawnChance);
 
-		if (SavingCore.Data.gems >= 1 && SavingCore.Data.healthUpgrades < 3)
+		if (SavingCore.Data.gems >= 1 && SavingCore.Data.coinSpawnChance < 3)
 		{
-			card.Status = "HEALTH UPGRADE";
+			card.Status = "COIN SPAWN CHANCE";
 			card.Interactable = true;
 			card.StatusTextColor = Color.white;
 		}
 		else
 		{
-			if (SavingCore.Data.healthUpgrades >= 3)
+			if (SavingCore.Data.coinSpawnChance >= 3)
 			{
 				card.Status = "UPGRADED TO MAX";
 				card.StatusTextColor = Color.green;
@@ -80,9 +68,9 @@ public class ShopRefresher : MonoBehaviour
 	{
 		card.ShowProgress(SavingCore.Data.speedUpgrades);
 
-		if (SavingCore.Data.coins >= 60 && SavingCore.Data.healthUpgrades < 3)
+		if (SavingCore.Data.coins >= 60 && SavingCore.Data.speedUpgrades < 3)
 		{
-			card.Status = "HEALTH UPGRADE";
+			card.Status = "BALL SPEED";
 			card.Interactable = true;
 			card.StatusTextColor = Color.white;
 		}
@@ -107,12 +95,14 @@ public class ShopRefresher : MonoBehaviour
 		}
 	}
 
-	private void PurchaseHealth()
+	private void PurchaseCoinChance()
 	{
 		SavingCore.Data.gems--;
-		SavingCore.Data.healthUpgrades++;
+		SavingCore.Data.coinSpawnChance++;
 		SavingCore.SaveData();
-		Refresh();
+		goodsRefreshController.RefreshInfo();
+		RefreshCoinChance();
+
 	}
 
 	private void PurchaseSpeed()
@@ -120,14 +110,15 @@ public class ShopRefresher : MonoBehaviour
 		SavingCore.Data.coins -= 60;
 		SavingCore.Data.speedUpgrades++;
 		SavingCore.SaveData();
-		Refresh();
+		goodsRefreshController.RefreshInfo();
+		RefreshSpeed();
 	}
 
 	public void Purchase()
 	{
 		if (isHealthShowing)
 		{
-			PurchaseHealth();
+			PurchaseCoinChance();
 		}
 		else
 		{

@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
 public class ChallengeController : MonoBehaviour
@@ -9,6 +7,7 @@ public class ChallengeController : MonoBehaviour
 	[SerializeField] private ChallengeWindow[] challenges;
 	[SerializeField] private Sprite gemSprite;
 	[SerializeField] private Sprite coinSprite;
+	[SerializeField] float alpha;
 
 	private void Start()
 	{
@@ -16,22 +15,67 @@ public class ChallengeController : MonoBehaviour
 		{
 			SetChallenges();
 		}
+		else
+		{
+			if (SavingCore.Data.currentChallenges.Count == 0)
+			{
+				SetChallenges();
+			}
+		}
+
+		Refresh();
 	}
 
 	private void SetChallenges()
 	{
 		SavingCore.Data.currentChallenges = new List<ChallengeData>();
+		SavingCore.Data.currentChallenges.AddRange(possibleChallenges.ChallengeDatas);
+		SavingCore.SaveData();
+	}
+
+	private void Refresh()
+	{
+		var currentChallenges = SavingCore.Data.currentChallenges;
 
 		for (int i = 0; i < challenges.Length; i++)
 		{
-			var newChallenge = possibleChallenges.ChallengeDatas[i];
-			challenges[i].Caption = newChallenge.description;
-			challenges[i].Reward = newChallenge.reward;
-			challenges[i].Progress = 0f;
-			challenges[i].CurrentChallenge = newChallenge;
+			challenges[i].Caption = currentChallenges[i].description;
+			challenges[i].Reward = currentChallenges[i].reward;
+			challenges[i].Progress = (float)currentChallenges[i].progress / (float)currentChallenges[i].goal;
+			challenges[i].CurrentChallenge = currentChallenges[i];
 
-			SavingCore.Data.currentChallenges.Add(newChallenge);
-			SavingCore.SaveData();
+			if (currentChallenges[i].rewardType == RewardType.Gem)
+			{
+				challenges[i].Icon = gemSprite;
+			}
+			else
+			{
+				challenges[i].Icon = coinSprite;
+			}
+
+			if (currentChallenges[i].Completed)
+			{
+				challenges[i].CanvasGroup.alpha = alpha;
+
+				if (!currentChallenges[i].checkedCompleted)
+				{
+					currentChallenges[i].checkedCompleted = true;
+					if (currentChallenges[i].rewardType == RewardType.Gem)
+					{
+						SavingCore.Data.gems += currentChallenges[i].reward;
+					}
+					else
+					{
+						SavingCore.Data.coins += currentChallenges[i].reward;
+					}
+
+				}
+			}
 		}
+	}
+
+	private void CompleteChallenge()
+	{
+
 	}
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 [Serializable]
 public class DataTransferObject
 {
-	public int coins = 10;
+	public int coins = 100;
 	public int gems = 1;
-	public int healthUpgrades = 1;
+	public int coinSpawnChance = 0;
 	public int speedUpgrades = 0;
 	public bool enteredGame = true;
 

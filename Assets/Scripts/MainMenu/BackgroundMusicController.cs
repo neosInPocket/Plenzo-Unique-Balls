@@ -9,14 +9,12 @@ public class BackgroundMusicController : MonoBehaviour
 	private void Awake()
 	{
 		var musicControllers = GameObject.FindObjectsOfType<BackgroundMusicController>();
-		var nonMine = musicControllers.FirstOrDefault(x => x != this);
+		var dontDestroyOnLoad = musicControllers.FirstOrDefault(x => x.gameObject.scene.name == "DontDestroyOnLoad");
 
-		if (nonMine != null && musicControllers.Length > 1)
+		if (dontDestroyOnLoad != null && dontDestroyOnLoad != this)
 		{
-			if (nonMine.gameObject.scene.name != "DontDestroyOnLoad")
-			{
-				Destroy(nonMine.gameObject);
-			}
+			Destroy(this.gameObject);
+			return;
 		}
 		else
 		{

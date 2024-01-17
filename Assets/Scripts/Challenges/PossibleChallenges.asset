@@ -13,15 +13,21 @@ MonoBehaviour:
   m_Name: PossibleChallenges
   m_EditorClassIdentifier: 
   challengeDatas:
-  - description: THROW 5 KNIVES
-    goal: 5
+  - challengeType: 1
+    description: SLIDE DOWN FOR 100 METERS
+    goal: 100
     rewardType: 0
     reward: 2
-  - description: LEAP 5 TIMES
+    progress: 0
+  - challengeType: 0
+    description: COLLECT 30 COINS
     goal: 7
     rewardType: 1
-    reward: 50
-  - description: TEST CAPTION
-    goal: 999
-    rewardType: 0
     reward: 100
+    progress: 0
+  - challengeType: 2
+    description: SLIDE FOR 20 SECONDS IN ONE GAME
+    goal: 20
+    rewardType: 1
+    reward: 80
+    progress: 0
