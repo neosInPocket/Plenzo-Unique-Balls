@@ -14,4 +14,49 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/RailViewer.unity
+    guid: b1d502e215dde4d4f8445b7ba5a5df07
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 1.unity
+    guid: c7779556388222044b5f418c1b5f089c
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 2.unity
+    guid: 70437900114ef304d9ef671246d1c5ca
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 3.unity
+    guid: 72158af4992512b4c80d4a796816ae07
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 4.unity
+    guid: 06113b577f6aae54686100de93b18f15
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 5.unity
+    guid: e905c0af2493ea64b95c59119da0c5b3
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 6.unity
+    guid: 8d3fed1e80215d24594f631c3cedbba6
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 7.unity
+    guid: e4eb9a856ee8c1745872b20af23f5548
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 8.unity
+    guid: 1407586695d0b0a4c81bf010e7c09fce
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 9.unity
+    guid: a22dec8c59ea3fe4d907ed633a12efaf
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 10.unity
+    guid: dace006349351db4eaeb0e995972bd83
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 11.unity
+    guid: 480a5425bb5ffe6439d36fbac584b6cb
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 12.unity
+    guid: 5f669a91348d1084c9726863d975bc18
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 13.unity
+    guid: 734ac1b079154cd4eabbb37cbfafa644
+  - enabled: 1
+    path: Assets/Scenes/RailViewer 14.unity
+    guid: b71130c64d633234cbd19b44f93bdb82
   m_configObjects: {}

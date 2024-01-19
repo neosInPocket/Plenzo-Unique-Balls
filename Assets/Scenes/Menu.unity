@@ -2353,7 +2353,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 67.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3930,9 +3930,9 @@ RectTransform:
   - {fileID: 1381094365}
   m_Father: {fileID: 1745715494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.50480515, y: 0.45400003}
-  m_AnchorMax: {x: 0.7446103, y: 0.851296}
-  m_AnchoredPosition: {x: 74, y: 0}
+  m_AnchorMin: {x: 0.5352169, y: 0.532}
+  m_AnchorMax: {x: 0.8053857, y: 0.879648}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &737888775
@@ -4019,7 +4019,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 173.3
+  m_fontSize: 153.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6783,7 +6783,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 67.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6961,7 +6961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.052756824, y: 0.5572688}
   m_AnchorMax: {x: 0.9472432, y: 0.79550755}
-  m_AnchoredPosition: {x: 0, y: -654}
+  m_AnchoredPosition: {x: 0, y: -653.99994}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383025500
@@ -9535,7 +9535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLINKO ADVENTURES
+  m_text: Plenzo Unique Balls
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e320b4b09308c0249b8a9f35e791a9b3, type: 2}
   m_sharedMaterial: {fileID: 7139586312461930288, guid: e320b4b09308c0249b8a9f35e791a9b3, type: 2}
@@ -9562,12 +9562,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 132.45
+  m_fontSize: 152.19
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 144.91
+  m_fontSizeMax: 152.19
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -9771,9 +9771,9 @@ RectTransform:
   - {fileID: 463517814}
   m_Father: {fileID: 1745715494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25538972, y: 0.45400003}
-  m_AnchorMax: {x: 0.49516907, y: 0.851296}
-  m_AnchoredPosition: {x: -74, y: 0}
+  m_AnchorMin: {x: 0.19461426, y: 0.532}
+  m_AnchorMax: {x: 0.46478307, y: 0.879648}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2043766737

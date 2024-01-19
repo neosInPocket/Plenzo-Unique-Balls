@@ -13,6 +13,7 @@ public class RailController : MonoBehaviour
 	[SerializeField] private LineRenderer lineRenderer;
 	[SerializeField] private float startRailEnd;
 	[SerializeField] private AnimationCurve positionsMagnitudeRelative;
+	[SerializeField] private float railSpeed;
 	private Vector2 screenSize;
 	public bool Enabled
 	{
@@ -36,10 +37,10 @@ public class RailController : MonoBehaviour
 	}
 
 	private bool isEnabled;
-	private Vector2 currentStartPoint;
 	private Vector2 currentFingerStartPoint;
 	private Vector2 currentMovingFingerPosition;
 	private bool isShooting;
+	private bool fingerDown;
 
 	private void Start()
 	{
@@ -53,6 +54,8 @@ public class RailController : MonoBehaviour
 	private void OnFingerDown(Finger finger)
 	{
 		if (isShooting) return;
+		if (fingerDown) return;
+		fingerDown = true;
 
 		currentFingerStartPoint = CameraSize.ScreenToWorldPoint(finger.screenPosition);
 	}
@@ -60,17 +63,21 @@ public class RailController : MonoBehaviour
 	private void OnFingerUp(Finger finger)
 	{
 		if (isShooting) return;
+		if (!fingerDown) return;
 
 		var resultVector = currentMovingFingerPosition - currentFingerStartPoint;
+		Debug.Log(resultVector.magnitude);
 		if (resultVector.y > 0) return;
 
 		isShooting = true;
+		fingerDown = false;
 		StartCoroutine(AddVertices(resultVector));
 	}
 
 	private void OnFingerMove(Finger finger)
 	{
 		if (isShooting) return;
+		if (!fingerDown) return;
 
 		currentMovingFingerPosition = CameraSize.ScreenToWorldPoint(finger.screenPosition);
 	}
@@ -98,7 +105,7 @@ public class RailController : MonoBehaviour
 
 			lineRenderer.SetPosition(lineRenderer.positionCount - 1, startPosition);
 
-			yield return new WaitForSeconds(0.01f);
+			yield return new WaitForFixedUpdate();
 		}
 
 		isShooting = false;
@@ -137,7 +144,6 @@ public class RailController : MonoBehaviour
 		isShooting = false;
 		currentFingerStartPoint = Vector2.zero;
 		currentMovingFingerPosition = Vector2.zero;
-		currentStartPoint = Vector2.zero;
 	}
 
 	private void SetRail()
