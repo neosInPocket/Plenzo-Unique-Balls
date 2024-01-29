@@ -341,7 +341,7 @@ MonoBehaviour:
   pauseController: {fileID: 420271981}
   levelValue: {fileID: 812792686}
   fillImage: {fileID: 1350011548}
-  scorePerCoin: 2
+  scorePerCoin: 4
   endScreen: {fileID: 1029029330}
 --- !u!1 &420271979
 GameObject:
