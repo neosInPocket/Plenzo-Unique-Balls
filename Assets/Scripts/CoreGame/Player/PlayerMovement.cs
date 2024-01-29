@@ -47,19 +47,19 @@ public class PlayerMovement : MonoBehaviour
 		switch (SavingCore.Data.speedUpgrades)
 		{
 			case 0:
-				verticalSpeed = 2f;
+				verticalSpeed = 1.7f;
 				break;
 
 			case 1:
-				verticalSpeed = 1.85f;
+				verticalSpeed = 1.6f;
 				break;
 
 			case 2:
-				verticalSpeed = 1.76f;
+				verticalSpeed = 1.5f;
 				break;
 
 			case 3:
-				verticalSpeed = 1.5f;
+				verticalSpeed = 1.4f;
 				break;
 		}
 	}
