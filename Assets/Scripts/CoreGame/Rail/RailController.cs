@@ -142,6 +142,7 @@ public class RailController : MonoBehaviour
 	{
 		SetRail();
 		isShooting = false;
+		fingerDown = false;
 		currentFingerStartPoint = Vector2.zero;
 		currentMovingFingerPosition = Vector2.zero;
 	}

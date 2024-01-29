@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Linq;
-using UnityEditor.Build;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -138,8 +137,8 @@ public class PlayerMovement : MonoBehaviour
 	public void Clear()
 	{
 		spriteRenderer.enabled = true;
-		rb.constraints = RigidbodyConstraints2D.None;
 		trailRenderer.time = 1.78f;
+		ranOff = false;
 	}
 
 	public void Freeze(bool value)
@@ -147,10 +146,13 @@ public class PlayerMovement : MonoBehaviour
 		if (value)
 		{
 			rb.constraints = RigidbodyConstraints2D.FreezeAll;
+			trailRenderer.enabled = false;
 		}
 		else
 		{
 			rb.constraints = RigidbodyConstraints2D.None;
+			trailRenderer.Clear();
+			trailRenderer.enabled = true;
 		}
 
 	}

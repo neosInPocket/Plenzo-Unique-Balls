@@ -83,6 +83,8 @@ public class TutorialHandler : MonoBehaviour
 		{
 			player.Enabled = false;
 			rail.Enabled = false;
+			player.CoinCollected -= OnPLayerCoinCollected;
+			player.LoseAction -= OnPlayerLose;
 			Quote4();
 		}
 
